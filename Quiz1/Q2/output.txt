@@ -1,0 +1,26 @@
+Model 1:
+Accuracy: 1.0
+Classification Report:
+              precision    recall  f1-score   support
+
+         yes       1.00      1.00      1.00       106
+
+    accuracy                           1.00       106
+   macro avg       1.00      1.00      1.00       106
+weighted avg       1.00      1.00      1.00       106
+
+Cross validation scores: [0.99056604 0.98113208 1.         1.         1.        ]
+
+Model 2:
+Accuracy: 1.0
+Classification Report:
+              precision    recall  f1-score   support
+
+         yes       1.00      1.00      1.00       106
+
+    accuracy                           1.00       106
+   macro avg       1.00      1.00      1.00       106
+weighted avg       1.00      1.00      1.00       106
+
+Cross validation scores: [0.99056604 0.98113208 1.         1.         1.        ]
+

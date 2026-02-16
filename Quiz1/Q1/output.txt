@@ -1,0 +1,116 @@
+Model 1 (biased and balanced):
+Accuracy: 0.6570784959279155
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.69      0.67      0.68      3151
+           1       0.62      0.64      0.63      2620
+
+    accuracy                           0.66      5771
+   macro avg       0.65      0.66      0.65      5771
+weighted avg       0.66      0.66      0.66      5771
+
+Cross validation scores: [0.67428967 0.66389466 0.64449064 0.67567568 0.65950069]
+
+Model 2 (biased and balanced):
+Accuracy: 0.628140703517588
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.65      0.69      0.67      3151
+           1       0.60      0.56      0.58      2620
+
+    accuracy                           0.63      5771
+   macro avg       0.62      0.62      0.62      5771
+weighted avg       0.63      0.63      0.63      5771
+
+Cross validation scores: [0.66112266 0.65003465 0.63063063 0.66181566 0.64840499]
+
+Model 3 (1 but biased and unbalanced):
+Accuracy: 0.660370819615318
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.66      0.78      0.71      3151
+           1       0.66      0.52      0.58      2620
+
+    accuracy                           0.66      5771
+   macro avg       0.66      0.65      0.65      5771
+weighted avg       0.66      0.66      0.65      5771
+
+Cross validation scores: [0.67706168 0.66597367 0.65003465 0.67636868 0.65603329]
+
+Model 4 (2 but biased and unbalanced):
+Accuracy: 0.6357650320568359
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.65      0.71      0.68      3151
+           1       0.61      0.54      0.58      2620
+
+    accuracy                           0.64      5771
+   macro avg       0.63      0.63      0.63      5771
+weighted avg       0.63      0.64      0.63      5771
+
+Cross validation scores: [0.66042966 0.65349965 0.63201663 0.64795565 0.65464632]
+
+Model 5 (1 but unbiased and balanced):
+Accuracy: 0.6394039161323861
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.64      0.77      0.70      3151
+           1       0.63      0.49      0.55      2620
+
+    accuracy                           0.64      5771
+   macro avg       0.64      0.63      0.62      5771
+weighted avg       0.64      0.64      0.63      5771
+
+Cross validation scores: [0.65349965 0.64033264 0.60776161 0.66250866 0.64909847]
+
+Model 6 (2 but unbiased and balanced):
+Accuracy: 0.6340322301160978
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.64      0.76      0.69      3151
+           1       0.62      0.49      0.55      2620
+
+    accuracy                           0.63      5771
+   macro avg       0.63      0.62      0.62      5771
+weighted avg       0.63      0.63      0.63      5771
+
+Cross validation scores: [0.63825364 0.62924463 0.60637561 0.64795565 0.6518724 ]
+
+Model 7 (1 but unbiased and unbalanced):
+Accuracy: 0.6314330272049905
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.62      0.86      0.72      3151
+           1       0.68      0.36      0.47      2620
+
+    accuracy                           0.63      5771
+   macro avg       0.65      0.61      0.59      5771
+weighted avg       0.64      0.63      0.60      5771
+
+Cross validation scores: [0.63825364 0.63894664 0.60706861 0.64726265 0.63661581]
+
+Model 8 (2 but unbiased and unbalanced):
+Accuracy: 0.6236354184716687
+Classification Report:
+              precision    recall  f1-score   support
+
+          -1       0.62      0.81      0.70      3151
+           1       0.63      0.40      0.49      2620
+
+    accuracy                           0.62      5771
+   macro avg       0.63      0.61      0.60      5771
+weighted avg       0.63      0.62      0.61      5771
+
+Cross validation scores: [0.65142065 0.63825364 0.60984061 0.65627166 0.64979196]
+
+Average accuracy of models 1 and 2: 0.6426095997227517
+Average accuracy of models 3 and 4: 0.6480679258360769
+Average accuracy of models 5 and 6: 0.6367180731242419
+Average accuracy of models 7 and 8: 0.6275342228383296
