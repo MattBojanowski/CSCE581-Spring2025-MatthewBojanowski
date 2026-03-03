@@ -1,0 +1,11 @@
+Project plan steps:
+
+Steps with ~ in front are finished
+
+~(finished on 2-24)1. Import data to train model on
+(finish by 3-4)2. Train a model on the data
+(finish by 3-14)3. Test with some of the data
+(finish by 3-22)4. Create a way for user to input data so it checks if fraud is happening
+(by 4-1)5. Display results after analyzing users input data
+(by 4-7)6. Create explanation as for why it thinks there is/isn't fraud happening
+(by end)7. Write presentation report
