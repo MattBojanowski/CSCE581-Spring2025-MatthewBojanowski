@@ -1,0 +1,6 @@
+line,step,type,amount,isFlaggedFraud,prediction,reason
+1,1,PAYMENT,9839.64,0,0,Model predicts non-fraud
+2,1,PAYMENT,1864.28,0,0,Model predicts non-fraud
+3,1,TRANSFER,181.0,0,1,Model predicts fraud
+4,1,CASH_OUT,181.0,0,1,Model predicts fraud
+5,1,PAYMENT,11668.14,0,0,Model predicts non-fraud
