@@ -1,6 +1,12 @@
-line,step,type,amount,isFlaggedFraud,prediction,reason
-1,1,PAYMENT,9839.64,0,0,Model predicts non-fraud
-2,1,PAYMENT,1864.28,0,0,Model predicts non-fraud
-3,1,TRANSFER,181.0,0,1,Model predicts fraud
-4,1,CASH_OUT,181.0,0,1,Model predicts fraud
-5,1,PAYMENT,11668.14,0,0,Model predicts non-fraud
+line,step,type,amount,isFlaggedFraud,prediction,fraud_probability,threshold,reason,conclusion
+
+1,1,PAYMENT,9839.64,0,0,0.000000,0.249651,Highlights: No model features were found that meaningfully increased fraud likelihood. Amount is $9;839.64 reduced fraud likelihood by 0.1050. Origin new balance is $160;296.36 reduced fraud likelihood by 0.0273. Origin balance change of $-9;839.64 reduced fraud likelihood by 0.0075.,There is a 0.000000 chance that fraud occurred.
+
+2,1,PAYMENT,1864.28,0,0,0.000000,0.249651,Highlights: No model features were found that meaningfully increased fraud likelihood. Amount is $1;864.28 reduced fraud likelihood by 0.1225. Origin new balance is $19;384.72 reduced fraud likelihood by 0.0123. Origin balance change of $-1;864.28 reduced fraud likelihood by 0.0050. Transaction type is 'payment' reduced fraud likelihood by 0.0025.,There is a 0.000000 chance that fraud occurred.
+
+3,1,TRANSFER,182.0,0,1,0.992424,0.249651,Highlights: Amount relative to new origin balance is 182.00x increased fraud likelihood by 0.2976. Amount relative to old origin balance is 1.00x increased fraud likelihood by 0.2950. Transaction type is 'transfer' increased fraud likelihood by 0.2306. Origin old balance is $182.00 increased fraud likelihood by 0.1075. No model features were found that meaningfully reduced fraud likelihood.,There is a 9.924237 chance that fraud occurred.
+
+4,1,CASH_OUT,181.0,0,1,0.917289,0.249651,Highlights: Amount relative to new origin balance is 181.00x increased fraud likelihood by 0.2575. Amount relative to old origin balance is 1.00x increased fraud likelihood by 0.2499. Origin balance change of $-181.00 increased fraud likelihood by 0.1225. Transaction type is 'cash_out' increased fraud likelihood by 0.0675. Amount is $181.00 reduced fraud likelihood by 0.0175. Destination name starts with 'c' reduced fraud likelihood by 0.0000.,There is a 9.172885 chance that fraud occurred.
+
+5,1,PAYMENT,11668.14,0,0,0.000000,0.249651,Highlights: No model features were found that meaningfully increased fraud likelihood. Amount is $11;668.14 reduced fraud likelihood by 0.1150. Origin new balance is $29;885.86 reduced fraud likelihood by 0.0123. Origin balance change of $-11;668.14 reduced fraud likelihood by 0.0075. Origin old balance is $41;554.00 reduced fraud likelihood by 0.0025.,There is a 0.000000 chance that fraud occurred.
+
