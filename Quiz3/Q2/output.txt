@@ -1,0 +1,28 @@
+George W. Bush:
+Textblob score: 0.1881 (Positive)
+Vader score:    0.9998 (Positive)
+  Result: Polarities match
+
+Harry S. Truman:
+Textblob score: 0.1848 (Positive)
+Vader score:    1.0000 (Positive)
+  Result: Polarities match
+
+William McKinley:
+Textblob score: 0.1883 (Positive)
+Vader score:    1.0000 (Positive)
+  Result: Polarities match
+
+James K. Polk:
+Textblob score: 0.1571 (Positive)
+Vader score:    1.0000 (Positive)
+  Result: Polarities match
+
+George Washington:
+Textblob score: 0.2065 (Positive)
+Vader score:    0.9999 (Positive)
+  Result: Polarities match
+
+Polarity agreements: 5/5 (100.0%)
+Conclusion:
+Methods show strong agreement (100.0% match).

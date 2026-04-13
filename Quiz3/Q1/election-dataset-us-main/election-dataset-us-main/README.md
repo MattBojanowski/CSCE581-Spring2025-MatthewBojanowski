@@ -1,0 +1,18 @@
+## US dataset about Voter FAQs and code
+This data was collected by looking for data at each US state's election commission website(s). Further, we augmented it with data from [Vote411](https://www.vote411.org/) managed by League for Women Voters (LWV), a non-profit. See technical documentation as well as the paper - ["Do Voters Get the Information They Want? Understanding Authentic Voter FAQs in the US and How to Improve for Informed Electoral Participation"](https://www.arxiv.org/abs/2412.15273).
+1. [`code-us`](https://github.com/ai4society/election-dataset-us/tree/main/code-us) folder contains code to work with data in data-us sub-folder.
+2. [`data-us`](https://github.com/ai4society/election-dataset-us/tree/main/data-us) folder contains data in .json format.
+
+## Citation
+
+If you find this work useful, please cite:
+```
+@inproceedings{ai4s2024-voterfaqsUS,
+  title={Do Voters Get the Information They Want? Understanding Authentic Voter FAQs in the US and How to Improve for Informed Electoral Participation},
+  author={Vipula Rawte and Deja N Scott and Gaurav Kumar and Aishneet Juneja and Bharat Sowrya Yaddanapalli and Biplav Srivastava},
+  booktitle={TrustNLP: Fifth Workshop on Trustworthy Natural Language Processing, 2025 Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL 2025), https://2025.naacl.org/},
+  year={2025}
+}
+```
+## Related data: global democracies
+For related Voter FAQs data about leading global democracies, see [repo](https://github.com/ai4society/election-dataset/).
