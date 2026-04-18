@@ -1,19 +1,129 @@
-step,type,amount,nameOrig,oldbalanceOrg,newbalanceOrig,nameDest,oldbalanceDest,newbalanceDest,isFlaggedFraud,prediction,fraud_probability,threshold,reason,conclusion
-1,PAYMENT,9839.64,C1231006815,170136.0,160296.36,M1979787155,0.0,0.0,0,0,0.0,0.2496513755307867,Model probability=0.000000. origin balance dropped after the transaction destination balance did not increase,No fraud detected
-1,PAYMENT,1864.28,C1666544295,21249.0,19384.72,M2044282225,0.0,0.0,0,0,0.0,0.2496513755307867,Model probability=0.000000. origin balance dropped after the transaction destination balance did not increase,No fraud detected
-1,TRANSFER,182.0,C1305486145,182.0,0.0,C553264065,0.0,0.0,0,1,0.9924237280895977,0.2496513755307867,Model probability=0.992424. transaction type 'TRANSFER' is riskier than a PAYMENT amount is large relative to the origin's new balance origin balance dropped after the transaction destination balance did not increase,Fraud detected
-1,CASH_OUT,181.0,C840083671,181.0,0.0,C38997010,21182.0,0.0,0,1,0.917288537351821,0.2496513755307867,Model probability=0.917289. transaction type 'CASH_OUT' is riskier than a PAYMENT amount is large relative to the origin's new balance origin balance dropped after the transaction,Fraud detected
-1,PAYMENT,11668.14,C2048537720,41554.0,29885.86,M1230701703,0.0,0.0,0,0,0.0,0.2496513755307867,Model probability=0.000000. origin balance dropped after the transaction destination balance did not increase,No fraud detected
+step,type,amount,nameOrig,oldbalanceOrg,newbalanceOrig,nameDest,oldbalanceDest,newbalanceDest,isFlaggedFraud,prediction,fraud_probability,threshold
+1,PAYMENT,9839.64,C1231006815,170136.0,160296.36,M1979787155,0.0,0.0,0,0,0.0,0.2496513755307867
+1,PAYMENT,1864.28,C1666544295,21249.0,19384.72,M2044282225,0.0,0.0,0,0,0.0,0.2496513755307867
+1,TRANSFER,182.0,C1305486145,182.0,0.0,C553264065,0.0,0.0,0,1,0.9924237280895976,0.2496513755307867
+1,CASH_OUT,181.0,C840083671,181.0,0.0,C38997010,21182.0,0.0,0,1,0.917288537351821,0.2496513755307867
+1,PAYMENT,11668.14,C2048537720,41554.0,29885.86,M1230701703,0.0,0.0,0,0,0.0,0.2496513755307867
 
 
 LLM Explanations:
-Line 1: LLM unavailable because OPENAI_API_KEY is not set. Using local model output instead: Model probability=0.000000. origin balance dropped after the transaction destination balance did not increase
+Line 1: You are a financial fraud analyst explaining a transaction classification.
 
-Line 2: LLM unavailable because OPENAI_API_KEY is not set. Using local model output instead: Model probability=0.000000. origin balance dropped after the transaction destination balance did not increase
+A machine learning model classified a transaction as NOT FRAUD.
 
-Line 3: LLM unavailable because OPENAI_API_KEY is not set. Using local model output instead: Model probability=0.992424. transaction type 'TRANSFER' is riskier than a PAYMENT amount is large relative to the origin's new balance origin balance dropped after the transaction destination balance did not increase
+TRANSACTION DETAILS:
+- Transaction type: PAYMENT
+- Amount: $9,839.64
+- Originator old balance: $170,136.00
+- Originator new balance: $160,296.36
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
 
-Line 4: LLM unavailable because OPENAI_API_KEY is not set. Using local model output instead: Model probability=0.917289. transaction type 'CASH_OUT' is riskier than a PAYMENT amount is large relative to the origin's new balance origin balance dropped after the transaction
+MODEL OUTPUT:
+- Fraud probability: 0.0000 (threshold: 0.2497)
+- Classification: NOT FRAUD
 
-Line 5: LLM unavailable because OPENAI_API_KEY is not set. Using local model output instead: Model probability=0.000000. origin balance dropped after the transaction destination balance did not increase
+TASK:
+Write a clear, 2–3 sentence explanation of WHY the model made this classification.
+Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
+Only output a 2–3 sentence explanation of the model's decision.
+
+ The model classified the transaction as NOT FRAUD because the transaction amount of $9,839.64 represents a relatively small percentage change in the originator's balance, from $170,136.00 to $160,296.36, which is a decrease of approximately 5.9%. Additionally, the destination'
+
+Line 2: You are a financial fraud analyst explaining a transaction classification.
+
+A machine learning model classified a transaction as NOT FRAUD.
+
+TRANSACTION DETAILS:
+- Transaction type: PAYMENT
+- Amount: $1,864.28
+- Originator old balance: $21,249.00
+- Originator new balance: $19,384.72
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+MODEL OUTPUT:
+- Fraud probability: 0.0000 (threshold: 0.2497)
+- Classification: NOT FRAUD
+
+TASK:
+Write a clear, 2–3 sentence explanation of WHY the model made this classification.
+Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
+Only output a 2–3 sentence explanation of the model's decision.
+
+ The model classified the transaction as NOT FRAUD because the transaction amount of $1,864.28 represents a relatively small percentage of the originator's balance, and there was no change in the destination's balance, indicating no direct benefit to the recipient. Additionally, the transaction did not trigger any system flags, and the fraud probability was well below the threshold
+
+Line 3: You are a financial fraud analyst explaining a transaction classification.
+
+A machine learning model classified a transaction as FRAUD.
+
+TRANSACTION DETAILS:
+- Transaction type: TRANSFER
+- Amount: $182.00
+- Originator old balance: $182.00
+- Originator new balance: $0.00
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+MODEL OUTPUT:
+- Fraud probability: 0.9924 (threshold: 0.2497)
+- Classification: FRAUD
+
+TASK:
+Write a clear, 2–3 sentence explanation of WHY the model made this classification.
+Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
+Only output a 2–3 sentence explanation of the model's decision.
+
+ The model classified the transaction as fraudulent due to the complete depletion of the originator's account balance, which is highly unusual and indicative of potential unauthorized activity. The transaction amount matches the originator's previous balance, suggesting a direct transfer rather than a legitimate expense. The absence of a flag by the system does not negate the high
+
+Line 4: You are a financial fraud analyst explaining a transaction classification.
+
+A machine learning model classified a transaction as FRAUD.
+
+TRANSACTION DETAILS:
+- Transaction type: CASH_OUT
+- Amount: $181.00
+- Originator old balance: $181.00
+- Originator new balance: $0.00
+- Destination old balance: $21,182.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+MODEL OUTPUT:
+- Fraud probability: 0.9173 (threshold: 0.2497)
+- Classification: FRAUD
+
+TASK:
+Write a clear, 2–3 sentence explanation of WHY the model made this classification.
+Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
+Only output a 2–3 sentence explanation of the model's decision.
+
+ The model classified the transaction as FRAUD due to the complete depletion of the originator's account balance, which is a significant risk factor for fraudulent activity. The transaction amount matched the originator's old balance, suggesting a potential attempt to clear the account without authorization. The absence of a flag by the system does not negate the high fraud probability indicated
+
+Line 5: You are a financial fraud analyst explaining a transaction classification.
+
+A machine learning model classified a transaction as NOT FRAUD.
+
+TRANSACTION DETAILS:
+- Transaction type: PAYMENT
+- Amount: $11,668.14
+- Originator old balance: $41,554.00
+- Originator new balance: $29,885.86
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+MODEL OUTPUT:
+- Fraud probability: 0.0000 (threshold: 0.2497)
+- Classification: NOT FRAUD
+
+TASK:
+Write a clear, 2–3 sentence explanation of WHY the model made this classification.
+Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
+Only output a 2–3 sentence explanation of the model's decision.
+
+ The model classified the transaction as NOT FRAUD because the transaction amount of $11,668.14 represents a significant portion of the originator's balance, which is $41,554.00, but it does not exceed the threshold set for fraud probability, which is 0.2497. Additionally, the transaction does not
 
