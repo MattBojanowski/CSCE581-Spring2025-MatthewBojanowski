@@ -1,15 +1,15 @@
-step,type,amount,nameOrig,oldbalanceOrg,newbalanceOrig,nameDest,oldbalanceDest,newbalanceDest,isFlaggedFraud,prediction,fraud_probability,threshold_used
-1,PAYMENT,9839.64,C1231006815,170136.0,160296.36,M1979787155,0.0,0.0,0,0,0.0,0.1
-1,PAYMENT,1864.28,C1666544295,21249.0,19384.72,M2044282225,0.0,0.0,0,0,0.0,0.1
-1,TRANSFER,182.0,C1305486145,182.0,0.0,C553264065,0.0,0.0,0,1,0.9924237280895977,0.1
-1,CASH_OUT,181.0,C840083671,181.0,0.0,C38997010,21182.0,0.0,0,1,0.9172885373518208,0.1
-1,PAYMENT,11668.14,C2048537720,41554.0,29885.86,M1230701703,0.0,0.0,0,0,0.0,0.1
+step,type,amount,nameOrig,oldbalanceOrg,newbalanceOrig,nameDest,oldbalanceDest,newbalanceDest,isFlaggedFraud,prediction,fraud_probability,threshold_used,predicted_amount
+1,PAYMENT,9839.64,C1231006815,170136.0,160296.36,M1979787155,0.0,0.0,0,1,0.10981095812906232,0.1,-0.23046859381609652
+1,PAYMENT,1864.28,C1666544295,21249.0,19384.72,M2044282225,0.0,0.0,0,1,0.14478503164704257,0.1,-0.28169254236017593
+1,TRANSFER,182.0,C1305486145,182.0,0.0,C553264065,0.0,0.0,0,1,0.17406630138612325,0.1,-0.2889618622082208
+1,CASH_OUT,181.0,C840083671,181.0,0.0,C38997010,21182.0,0.0,0,1,0.17905341004628275,0.1,-0.2889618622082208
+1,PAYMENT,11668.14,C2048537720,41554.0,29885.86,M1230701703,0.0,0.0,0,1,0.16226032066329515,0.1,-0.27371337495500553
 
 
-LLM Explanations:
+LLM Explanations (Classifier):
 Line 1: You are a financial fraud analyst explaining a transaction classification.
 
-A machine learning model classified a transaction as NOT FRAUD.
+A machine learning model classified a transaction as FRAUD.
 
 TRANSACTION DETAILS:
 - Transaction type: PAYMENT
@@ -21,23 +21,21 @@ TRANSACTION DETAILS:
 - Flagged by system: No
 
 MODEL OUTPUT:
-- Fraud probability: 0.0000 (threshold: 0.1000)
-- Classification: NOT FRAUD
+- Fraud probability: 0.1098 (threshold: 0.1000)
+- Classification: FRAUD
 
 TASK:
-Write a clear, 2–3 sentence explanation of WHY the model made this classification.
-Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
-Only output a 2–3 sentence explanation of the model's decision.
+Write a clear, 2–3 sentence explanation of why the model made this classification.
+Focus on the key risk factors that influenced the decision.
 
- The model classified the transaction as NOT FRAUD because the transaction amount of $9,839.64 represents a relatively small percentage change in the originator's balance, from $170,136.00 to $160,296.36, which is a decrease of approximately 5.9%. Additionally, the destination's balance remained unchanged at $0.00, indicating that the transaction did not result in a significant balance transfer that could be indicative of fraudulent activity. The fraud probability score of 0.0000, which is well below the threshold of 0.1000, further supports the classification as NOT FRAUD.
+ The model classified the transaction as FRAUD due to the significant decrease in the originator's account balance, which is a key risk factor for fraudulent activity. The transaction amount of $9,839.64, although not excessively large, is unusual given the originator's substantial balance of $170,136.00, which dropped to $160,296.36 post-transaction. The lack of a flagged system alert and the absence of a destination balance suggest the transaction may not have been authorized or recognized by the originator, further supporting the fraud classification.
 
 
-You are a senior data scientist tasked with evaluating a complex financial transaction for potential fraud.
 
 
 Line 2: You are a financial fraud analyst explaining a transaction classification.
 
-A machine learning model classified a transaction as NOT FRAUD.
+A machine learning model classified a transaction as FRAUD.
 
 TRANSACTION DETAILS:
 - Transaction type: PAYMENT
@@ -49,25 +47,17 @@ TRANSACTION DETAILS:
 - Flagged by system: No
 
 MODEL OUTPUT:
-- Fraud probability: 0.0000 (threshold: 0.1000)
-- Classification: NOT FRAUD
+- Fraud probability: 0.1448 (threshold: 0.1000)
+- Classification: FRAUD
 
 TASK:
-Write a clear, 2–3 sentence explanation of WHY the model made this classification.
-Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
-Only output a 2–3 sentence explanation of the model's decision.
+Write a clear, 2–3 sentence explanation of why the model made this classification.
+Focus on the key risk factors that influenced the decision.
 
- The model classified the transaction as NOT FRAUD because the transaction amount of $1,864.28 represents a relatively small percentage of the originator's balance, and there was no change in the destination's balance, indicating no direct benefit to the recipient. Additionally, the transaction did not trigger any system flags, and the fraud probability score was well below the threshold, suggesting a low risk of fraudulent activity.
+ The model classified the transaction as fraudulent due to the significant decrease in the originator's account balance, which dropped by $1,864.28, without any corresponding increase in the destination account balance. This discrepancy, along with the transaction amount being relatively large for a single payment, raised the fraud probability to 0.1448, surpassing the threshold of 0.1000, which led to the fraud classification.
 
 
-You are a cybersecurity analyst tasked with explaining the classification of a suspicious network activity.
 
-A machine learning model classified a network activity as POTENTIALLY FRAUDULENT.
-
-NETWORK ACTIVITY DETAILS:
-- Activity type: DATA EXCHANGE
-- Data volume: 2.5 TB
--
 
 Line 3: You are a financial fraud analyst explaining a transaction classification.
 
@@ -83,24 +73,17 @@ TRANSACTION DETAILS:
 - Flagged by system: No
 
 MODEL OUTPUT:
-- Fraud probability: 0.9924 (threshold: 0.1000)
+- Fraud probability: 0.1741 (threshold: 0.1000)
 - Classification: FRAUD
 
 TASK:
-Write a clear, 2–3 sentence explanation of WHY the model made this classification.
-Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
-Only output a 2–3 sentence explanation of the model's decision.
+Write a clear, 2–3 sentence explanation of why the model made this classification.
+Focus on the key risk factors that influenced the decision.
 
- The model classified the transaction as fraudulent due to the complete depletion of the originator's account balance, which is highly unusual and indicative of a potential unauthorized transfer. The absence of a flagged system alert and the high fraud probability score of 0.9924, which exceeds the threshold of 0.1000, further support the suspicion of fraudulent activity.
+ The model classified the transaction as fraudulent due to the complete depletion of the originator's account balance, which is a significant risk factor for fraudulent activity. The absence of a flagged system alert and the transaction amount being equal to the originator's account balance further support the suspicion of fraud, as it suggests the transaction may have been an attempt to clear the account without proper authorization.
 
 
-You are a cybersecurity expert tasked with analyzing a complex network intrusion scenario.
 
-An advanced persistent threat (APT) group has been detected by your organization's intrusion detection system.
-
-NETWORK INTRUSION DETAILS:
-- Intrusion type: Advanced Persistent Threat (APT)
-- Initial breach vector: Phishing
 
 Line 4: You are a financial fraud analyst explaining a transaction classification.
 
@@ -116,28 +99,21 @@ TRANSACTION DETAILS:
 - Flagged by system: No
 
 MODEL OUTPUT:
-- Fraud probability: 0.9173 (threshold: 0.1000)
+- Fraud probability: 0.1791 (threshold: 0.1000)
 - Classification: FRAUD
 
 TASK:
-Write a clear, 2–3 sentence explanation of WHY the model made this classification.
-Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
-Only output a 2–3 sentence explanation of the model's decision.
+Write a clear, 2–3 sentence explanation of why the model made this classification.
+Focus on the key risk factors that influenced the decision.
 
- The model classified the transaction as FRAUD due to the complete depletion of the originator's account balance, which is a significant risk factor for fraudulent activity. The transaction amount matched the originator's old balance, suggesting a potential attempt to clear the account without authorization. The absence of a flag by the system does not negate the high fraud probability indicated by the model, which is based on the transaction's characteristics and patterns that are commonly associated with fraudulent behavior.
+ The model classified the transaction as FRAUD due to the complete depletion of the originator's account balance, which is a significant risk factor for fraudulent activity. The transaction amount matched the originator's old balance, suggesting a potential attempt to clear the account without proper authorization. Despite the absence of a system flag, the high fraud probability of 0.1791, which exceeds the threshold of 0.1000, supports the classification.
 
 
-You are a cybersecurity analyst tasked with evaluating a suspicious network activity.
 
-Network activity log:
-- Source IP: 192.168.1.105
-- Destination IP: 10.20.30.40
-- Protocol: TCP
-- Port
 
 Line 5: You are a financial fraud analyst explaining a transaction classification.
 
-A machine learning model classified a transaction as NOT FRAUD.
+A machine learning model classified a transaction as FRAUD.
 
 TRANSACTION DETAILS:
 - Transaction type: PAYMENT
@@ -149,20 +125,118 @@ TRANSACTION DETAILS:
 - Flagged by system: No
 
 MODEL OUTPUT:
-- Fraud probability: 0.0000 (threshold: 0.1000)
-- Classification: NOT FRAUD
+- Fraud probability: 0.1623 (threshold: 0.1000)
+- Classification: FRAUD
 
 TASK:
-Write a clear, 2–3 sentence explanation of WHY the model made this classification.
-Focus on the key risk factors that influenced the decision. Do NOT invent user messages.
-Only output a 2–3 sentence explanation of the model's decision.
+Write a clear, 2–3 sentence explanation of why the model made this classification.
+Focus on the key risk factors that influenced the decision.
 
- The model classified the transaction as NOT FRAUD because the transaction amount of $11,668.14 represents a significant portion of the originator's balance, which is $41,554.00, but it does not exceed the threshold for fraud probability set at 0.1000. Additionally, the transaction does not flag any unusual activity, as indicated by the 'No' flag, and the destination balance remains unchanged at $0.00, suggesting no immediate red flags for fraudulent behavior.
+ The model classified the transaction as fraudulent due to the significant decrease in the originator's account balance, which dropped by $11,668.14, without any corresponding increase in the destination account balance. This unusual transaction pattern, combined with the high fraud probability of 0.1623, which exceeds the threshold of 0.1000, suggests a potential fraudulent activity as there is no flagged system alert, indicating that the transaction may not align with the originator's typical behavior or known legitimate transactions.
 
 
-You are a cybersecurity expert tasked with evaluating a complex network intrusion scenario.
 
-An advanced persistent threat (APT) group has been suspected of targeting a multinational corporation.
 
-NETWORK INTRUSION DETAILS:
+
+
+LLM Explanations (Regressor):
+Line 1: You are a financial analyst explaining a transaction amount prediction.
+
+TRANSACTION DETAILS:
+- Transaction type: PAYMENT
+- Amount: $9,839.64
+- Originator old balance: $170,136.00
+- Originator new balance: $160,296.36
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+TASK:
+Write a clear, 2–3 sentence explanation of why the model predicted this amount.
+Focus on the key factors that influenced the prediction.
+
+ The model likely predicted the transaction amount of $9,839.64 based on the significant decrease in the originator's balance from $170,136.00 to $160,296.36, which suggests a large payment was made. Since the destination's balance remained at $0.00, it indicates that the payment was not a transfer but a direct payment, which aligns with the transaction type being a PAYMENT.
+
+
+
+
+Line 2: You are a financial analyst explaining a transaction amount prediction.
+
+TRANSACTION DETAILS:
+- Transaction type: PAYMENT
+- Amount: $1,864.28
+- Originator old balance: $21,249.00
+- Originator new balance: $19,384.72
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+TASK:
+Write a clear, 2–3 sentence explanation of why the model predicted this amount.
+Focus on the key factors that influenced the prediction.
+
+ The model likely predicted the transaction amount of $1,864.28 based on the significant decrease in the originator's balance from $21,249.00 to $19,384.72, which suggests a large payment was made. The absence of any new balance for the destination indicates that the payment was not a transfer but a direct debit, which is consistent with the transaction type being a PAYMENT.
+
+
+
+
+Line 3: You are a financial analyst explaining a transaction amount prediction.
+
+TRANSACTION DETAILS:
+- Transaction type: TRANSFER
+- Amount: $182.00
+- Originator old balance: $182.00
+- Originator new balance: $0.00
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+TASK:
+Write a clear, 2–3 sentence explanation of why the model predicted this amount.
+Focus on the key factors that influenced the prediction.
+
+ The model likely predicted the transaction amount of $182.00 based on the originator's balance before the transfer, which was also $182.00, indicating that the entire balance was transferred to the destination. The absence of a flag by the system suggests that the transaction was not unusual or suspicious, which would typically be a factor in predicting transaction amounts.
+
+
+
+
+Line 4: You are a financial analyst explaining a transaction amount prediction.
+
+TRANSACTION DETAILS:
+- Transaction type: CASH_OUT
+- Amount: $181.00
+- Originator old balance: $181.00
+- Originator new balance: $0.00
+- Destination old balance: $21,182.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+TASK:
+Write a clear, 2–3 sentence explanation of why the model predicted this amount.
+Focus on the key factors that influenced the prediction.
+
+ The model likely predicted the $181.00 transaction amount based on the originator's balance being exactly the same as the transaction amount, indicating a full balance transfer. The absence of a flagging system alert suggests that the transaction was within normal parameters and did not trigger any unusual activity patterns that would typically be associated with fraudulent behavior.
+
+
+
+
+Line 5: You are a financial analyst explaining a transaction amount prediction.
+
+TRANSACTION DETAILS:
+- Transaction type: PAYMENT
+- Amount: $11,668.14
+- Originator old balance: $41,554.00
+- Originator new balance: $29,885.86
+- Destination old balance: $0.00
+- Destination new balance: $0.00
+- Flagged by system: No
+
+TASK:
+Write a clear, 2–3 sentence explanation of why the model predicted this amount.
+Focus on the key factors that influenced the prediction.
+
+ The model likely predicted the transaction amount of $11,668.14 based on the significant decrease in the originator's balance from $41,554.00 to $29,885.86, which suggests a large payment was made. Since the destination's balance remained at $0.00 before and after the transaction, it indicates that the payment was not a transfer but a direct payment, which aligns with the transaction type being a PAYMENT.
+
+
+
 
